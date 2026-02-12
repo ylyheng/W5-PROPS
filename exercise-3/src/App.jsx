@@ -1,5 +1,6 @@
 import React from "react";
 import { ALL_PNV_TEACHERS } from "./teachers.js";
+import { userData } from "../../exercise-1/src/App.jsx";
 
 // NO change to perform here...
 export function User({ user }) {
@@ -18,7 +19,7 @@ function App() {
     <div id="app">
       <h1>PNV Team !!</h1>
       <p>Here are some PNV trainers and educators, do you know them?</p>
-      <User /> {/* How to loop on ALL_PNV_TEACHERS list ? */}
+      {ALL_PNV_TEACHERS.map((teacher) => (<User key={teacher.firstName} user={teacher} />))}
     </div>
   );
 }
